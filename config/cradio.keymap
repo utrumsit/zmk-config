@@ -19,8 +19,16 @@
 #define NUM 6
 #define MSC 7
 
-&lt { quick-tap-ms = <175>; };
-&mt { quick-tap-ms = <175>; };
+&lt {
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <125>;
+    tapping-term-ms = <200>;
+};
+&mt {
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <125>;
+    tapping-term-ms = <200>;
+};
 
 / {
     behaviors {
