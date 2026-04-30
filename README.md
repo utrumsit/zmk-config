@@ -85,6 +85,19 @@ Five profile slots, four of them bound to keys on layer 7.
 Inter-half pairing happens automatically the first time both halves boot on
 fresh firmware in range of each other. No human action needed for that.
 
+## Hold-tap tuning for home-row mods
+
+Home-row mods use ["timeless" configuration](https://zmk.dev/docs/keymaps/behaviors/hold-tap#home-row-mods) to minimize chording issues when typing quickly:
+
+| Property | Value | Purpose |
+|---|---|---|
+| `flavor` | `balanced` | Hold only if another key is pressed AND released within tapping term |
+| `require-prior-idle-ms` | 125ms | Immediately tap when typing fast — the key to avoiding swallowed keys |
+| `tapping-term-ms` | 280ms | Generous window for intentional holds |
+| `quick-tap-ms` | 175ms | Rapid re-taps always register as taps |
+
+See [ZMK hold-tap docs](https://zmk.dev/docs/keymaps/behaviors/hold-tap) for full details.
+
 ## Files
 
 - `config/cradio.keymap` — keymap source
